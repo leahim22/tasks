@@ -7,7 +7,7 @@ function App(): React.JSX.Element {
             <header className="App-header">
                 Leah Marcelli UD CISC275 with React Hooks and TypeScript
             </header>
-            <h1> Header </h1>; This is{" "}
+            <h1> Heading </h1>; This is{" "}
             <span style={{ color: "red" }}>colored text</span>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
