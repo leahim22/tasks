@@ -42,7 +42,7 @@ function App(): React.JSX.Element {
                         console.log("Hello World!");
                     }}
                 >
-                    Click Me
+                    Log Hello World
                 </Button>
             </div>
             ;;
