@@ -13,6 +13,9 @@ function App(): React.JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. <code> Hello World!</code>
             </p>
+            <div style={{ backgroundColor: "lightblue" }}>
+                Pandas love Sky Blue.
+            </div>
             <p>Pandas love to eat bamboo.</p>
             <div>
                 <img
