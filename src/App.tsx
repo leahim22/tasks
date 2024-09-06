@@ -28,17 +28,11 @@ function App(): React.JSX.Element {
                 This is <span style={{ color: "red" }}>colored text</span>.
             </div>
             <div>
-                Unordered List:
-                <ul>
-                    <li>First thing</li>
-                    <li>Another thing</li>
-                    <li>A third item</li>
-                </ul>
-                Ordered List:
+                Pandas favorite things:
                 <ol>
-                    <li>First thing</li>
-                    <li>Another thing</li>
-                    <li>A third item</li>
+                    <li>Food</li>
+                    <li>Playing</li>
+                    <li>Other Pandas</li>
                 </ol>
             </div>
             <div>
