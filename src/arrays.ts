@@ -27,7 +27,10 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    const IntArray = numbers.map((str: string): number =>
+        Number.isNaN(parseInt(str)) ? 0 : Number(str),
+    );
+    return IntArray;
 }
 
 /**
@@ -38,7 +41,13 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
+    const noQuestions = amounts.map((str: string): string =>
+        str.replace("$", ""),
+    );
+    const arr = noQuestions.map((str: string): number =>
+        isNaN(Number(str)) ? 0 : Number(str),
+    );
+    return arr;
 };
 
 /**
@@ -47,7 +56,11 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return messages.filter((msg) => !msg.endsWith("?"));
+    const noQ = messages.filter((msg: string): boolean => !msg.endsWith("?"));
+    const exclams = noQ.map((msg: string): string =>
+        msg.endsWith("!") ? msg.toUpperCase() : msg,
+    );
+    return exclams;
 };
 
 /**
@@ -76,7 +89,9 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    const sum = addends.reduce((acc, cur) => acc + cur, 0);
+    const addendStr = addends.length > 0 ? addends.join("+") : "0";
+    return sum + "=" + addendStr;
 }
 
 /**
@@ -89,5 +104,17 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    const negativeNum = values.findIndex((value) => value < 0);
+    const numSum = values.reduce((acc, cur) => acc + cur, 0);
+    if (negativeNum !== -1) {
+        return [
+            ...values.slice(0, negativeNum + 1),
+            numSum,
+            ...values.slice(negativeNum + 1),
+        ];
+    } else if (values.length > 0) {
+        return [...values, numSum];
+    } else {
+        return [];
+    }
 }
