@@ -105,16 +105,15 @@ export function makeMath(addends: number[]): string {
  */
 export function injectPositive(values: number[]): number[] {
     const negativeNum = values.findIndex((value) => value < 0);
-    const numSum = values.reduce((acc, cur) => acc + cur, 0);
-    if (negativeNum !== -1) {
-        return [
-            ...values.slice(0, negativeNum + 1),
-            numSum,
-            ...values.slice(negativeNum + 1),
-        ];
-    } else if (values.length > 0) {
+    const numSum = values
+        .slice(0, negativeNum === -1 ? values.length : negativeNum)
+        .reduce((acc, cur) => acc + cur, 0);
+    if (negativeNum === -1) {
         return [...values, numSum];
-    } else {
-        return [];
     }
+    return [
+        ...values.slice(0, negativeNum + 1),
+        numSum,
+        ...values.slice(negativeNum + 1),
+    ];
 }
