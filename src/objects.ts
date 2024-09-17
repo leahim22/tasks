@@ -77,10 +77,11 @@ export function toShortForm(question: Question): string {
  */
 export function toMarkdown(question: Question): string {
     const firstLine = `# ${question.name}\n`;
-    const secondLine = `${question.body}\n`;
+    const secondLine = `${question.body}`;
     let ansOptions = "";
     if (question.type === "multiple_choice_question") {
-        ansOptions = question.options.map((option) => `- ${option}`).join("\n");
+        ansOptions =
+            "\n" + question.options.map((option) => `- ${option}`).join("\n");
     }
     return firstLine + secondLine + ansOptions;
 }
@@ -102,9 +103,16 @@ export function renameQuestion(question: Question, newName: string): Question {
  */
 export function publishQuestion(question: Question): Question {
     const newQ: Question = {
-        ...question,
+        id: question.id,
+        name: question.name,
+        body: question.body,
+        type: question.type,
+        options: question.options,
+        expected: question.expected,
+        points: question.points,
         published: !question.published,
     };
+
     return newQ;
 }
 
