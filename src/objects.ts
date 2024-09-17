@@ -76,14 +76,13 @@ export function toShortForm(question: Question): string {
  * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
-    const firstLine = "# " + question.name + "\n";
-    const secondLine = question.body + "\n";
+    const firstLine = `# ${question.name}\n`;
+    const secondLine = `${question.body}\n`;
     let ansOptions = "";
     if (question.type === "multiple_choice_question") {
-        ansOptions =
-            "\n" + question.options.map((option) => "- " + option).join("\n");
+        ansOptions = question.options.map((option) => `- ${option}`).join("\n");
     }
-    return firstLine + secondLine + ansOptions.trim();
+    return firstLine + secondLine + ansOptions;
 }
 
 /**
@@ -102,10 +101,11 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-    return {
+    const newQ: Question = {
         ...question,
         published: !question.published,
     };
+    return newQ;
 }
 
 /**
@@ -115,17 +115,13 @@ export function publishQuestion(question: Question): Question {
  * The `published` field should be reset to false.
  */
 export function duplicateQuestion(id: number, oldQuestion: Question): Question {
-    const newName = "Copy of " + oldQuestion.name;
-    return {
-        id: id,
-        name: newName,
-        body: oldQuestion.body,
-        type: oldQuestion.type,
-        options: oldQuestion.options,
-        expected: oldQuestion.expected,
-        points: oldQuestion.points,
+    const newName: Question = {
+        ...oldQuestion,
+        name: "Copy of " + oldQuestion.name,
         published: false,
+        id: id,
     };
+    return newName;
 }
 
 /**
@@ -136,9 +132,8 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  * Check out the subsection about "Nested Fields" for more information.
  */
 export function addOption(question: Question, newOption: string): Question {
-    const newQuestion = { ...question };
-    newQuestion.options = [...question.options];
-    newQuestion.options.push(newOption);
+    const newOptions: string[] = [...question.options, newOption];
+    const newQuestion = { ...question, options: newOptions };
     return newQuestion;
 }
 
