@@ -91,9 +91,12 @@ export function toMarkdown(question: Question): string {
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
-    const newQuestion = question;
-    newQuestion.name = newName;
-    return newQuestion;
+    const newQ: Question = {
+        ...question,
+        name: newName,
+    };
+
+    return newQ;
 }
 
 /**
@@ -103,13 +106,7 @@ export function renameQuestion(question: Question, newName: string): Question {
  */
 export function publishQuestion(question: Question): Question {
     const newQ: Question = {
-        id: question.id,
-        name: question.name,
-        body: question.body,
-        type: question.type,
-        options: question.options,
-        expected: question.expected,
-        points: question.points,
+        ...question,
         published: !question.published,
     };
 
