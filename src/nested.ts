@@ -32,6 +32,7 @@ export function getNonEmptyQuestions(questions: Question[]): Question[] {
             emptyQ.options.length !== 0,
     );
     return isNotEmpty;
+
 }
 
 /***
@@ -87,7 +88,7 @@ export function sumPoints(questions: Question[]): number {
             return total + question.points;
         },
         0,
-    );
+    )
     return newSum;
 }
 
@@ -171,6 +172,7 @@ export function publishAll(questions: Question[]): Question[] {
         published: true,
     }));
     return isNowPublished;
+
 }
 
 /***
@@ -183,6 +185,7 @@ export function sameType(questions: Question[]): boolean {
     );
     const isFirst = deepCopy[0]?.type;
     return deepCopy.every((question) => question.type === isFirst);
+
 }
 
 /***

@@ -91,6 +91,7 @@ export function toMarkdown(question: Question): string {
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
+
     const newQ1: Question = {
         ...question,
         name: newName,

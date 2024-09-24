@@ -295,6 +295,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "4",
                 points: 1,
+
                 published: true,
             },
             {
@@ -315,6 +316,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["red", "apple", "firetruck"],
                 expected: "red",
                 points: 1,
+
                 published: true,
             },
         ]);
@@ -327,6 +329,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "4",
                 points: 1,
+
                 published: true,
             },
             {
@@ -337,6 +340,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "Z",
                 points: 1,
+
                 published: false,
             },
             {
@@ -447,6 +451,7 @@ describe("Testing the Question[] functions", () => {
         expect(makeAnswers(TRIVIA_QUESTIONS)).toEqual([
             { questionId: 1, correct: false, text: "", submitted: false },
             { questionId: 2, correct: false, text: "", submitted: false },
+
             { questionId: 3, correct: false, text: "", submitted: false },
         ]);
         expect(makeAnswers(SIMPLE_QUESTIONS_2)).toEqual([
@@ -454,6 +459,7 @@ describe("Testing the Question[] functions", () => {
             { questionId: 1937, correct: false, text: "", submitted: false },
             { questionId: 479, correct: false, text: "", submitted: false },
             { questionId: 777, correct: false, text: "", submitted: false },
+
             { questionId: 1937, correct: false, text: "", submitted: false },
         ]);
         expect(makeAnswers(EMPTY_QUESTIONS)).toEqual([
@@ -495,6 +501,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
+
                 published: true,
             },
         ]);
@@ -527,6 +534,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["red", "apple", "firetruck"],
                 expected: "red",
                 points: 1,
+
                 published: true,
             },
             {
@@ -653,6 +661,7 @@ describe("Testing the Question[] functions", () => {
                 BLANK_QUESTIONS,
                 142,
                 "A new question",
+
                 "short_answer_question",
             ),
         ).toEqual([...BLANK_QUESTIONS, NEW_BLANK_QUESTION]);
@@ -676,6 +685,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
+
                 published: false,
             },
             {
@@ -985,6 +995,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "Z",
                 points: 1,
+
                 published: false,
             },
             {
@@ -1125,6 +1136,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
+
                 published: false,
             },
             {
@@ -1135,6 +1147,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
+
                 published: false,
             },
         ]);
@@ -1147,6 +1160,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
+
                 published: false,
             },
             {
@@ -1177,6 +1191,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
+
                 published: false,
             },
         ]);
@@ -1199,6 +1214,7 @@ describe("Testing the Question[] functions", () => {
                 options: [
                     "Knowledge is the light of the mind",
                     "Just U Do it",
+
                     "Nothing, what's the motto with you?",
                 ],
                 expected: "Knowledge is the light of the mind",
