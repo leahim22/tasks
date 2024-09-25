@@ -1,5 +1,10 @@
 import React from "react";
 import "./App.css";
+import { ChangeType } from "./components/ChangeType";
+import { Counter } from "./components/Counter";
+import { CycleHoliday } from "./components/CycleHoliday";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { StartAttempt } from "./components/StartAttempt";
 
 import { Button } from "react-bootstrap";
 function App(): React.JSX.Element {
@@ -46,6 +51,20 @@ function App(): React.JSX.Element {
                 >
                     Log Hello World
                 </Button>
+            </div>
+            <ChangeType></ChangeType>
+            <div></div>
+            <div>
+                <Counter></Counter>
+            </div>
+            <div>
+                <CycleHoliday></CycleHoliday>
+            </div>
+            <div>
+                <RevealAnswer></RevealAnswer>
+            </div>
+            <div>
+                <StartAttempt></StartAttempt>
             </div>
             ;;
         </div>
