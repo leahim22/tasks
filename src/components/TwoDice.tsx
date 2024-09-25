@@ -14,11 +14,25 @@ export function d6(): number {
 export function TwoDice(): React.JSX.Element {
     const [leftDice, setLeftDice] = useState<number>(d6());
     const [rightDice, setRightDice] = useState<number>(d6());
-    const leftRoll = (): void => {
-        setLeftDice(d6());
+    const [gameStatus, setGameStatus] = useState<string | null>(null);
+
+    const checkGameStatus = (left: number, right: number): void => {
+        if (left === right) {
+            setGameStatus(left === 1 ? "Lose" : "Win");
+        } else {
+            setGameStatus(null); // Reset status if not matched
+        }
     };
+    const leftRoll = (): void => {
+        const newValue = d6();
+        setLeftDice(newValue);
+        checkGameStatus(newValue, rightDice);
+    };
+
     const rightRoll = (): void => {
-        setRightDice(d6());
+        const newValue = d6();
+        setRightDice(newValue);
+        checkGameStatus(leftDice, newValue);
     };
 
     return (
@@ -29,12 +43,7 @@ export function TwoDice(): React.JSX.Element {
             </div>
             <Button onClick={leftRoll}>Roll Left</Button>
             <Button onClick={rightRoll}>Roll Right</Button>
-            {(() => {
-                if (leftDice === rightDice) {
-                    return leftDice === 1 ? <div>Lose</div> : <div>Win</div>;
-                }
-                return null;
-            })()}
+            {gameStatus && <div>{gameStatus}</div>}
         </div>
     );
 }
