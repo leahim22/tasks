@@ -7,6 +7,7 @@ import { RevealAnswer } from "./components/RevealAnswer";
 import { StartAttempt } from "./components/StartAttempt";
 
 import { Button } from "react-bootstrap";
+import { TwoDice } from "./components/TwoDice";
 function App(): React.JSX.Element {
     return (
         <div className="App">
@@ -65,6 +66,9 @@ function App(): React.JSX.Element {
             </div>
             <div>
                 <StartAttempt></StartAttempt>
+            </div>
+            <div>
+                <TwoDice></TwoDice>
             </div>
             ;;
         </div>
