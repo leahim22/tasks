@@ -5,7 +5,10 @@ import { Counter } from "./components/Counter";
 import { CycleHoliday } from "./components/CycleHoliday";
 import { RevealAnswer } from "./components/RevealAnswer";
 import { StartAttempt } from "./components/StartAttempt";
-
+import { DoubleHalf } from "./bad-components/DoubleHalf";
+import { ColoredBox } from "./bad-components/ColoredBox";
+import { ShoveBox } from "./bad-components/ShoveBox";
+import { ChooseTeam } from "./bad-components/ChooseTeam";
 import { Button } from "react-bootstrap";
 import { TwoDice } from "./components/TwoDice";
 function App(): React.JSX.Element {
@@ -53,23 +56,30 @@ function App(): React.JSX.Element {
                     Log Hello World
                 </Button>
             </div>
+            <hr></hr>
+            <ChooseTeam></ChooseTeam>
+            <hr></hr>
+            <ColoredBox></ColoredBox>
+            <hr></hr>
+            <ShoveBox></ShoveBox>
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <hr></hr>
             <ChangeType></ChangeType>
-            <div></div>
-            <div>
-                <Counter></Counter>
-            </div>
-            <div>
-                <CycleHoliday></CycleHoliday>
-            </div>
-            <div>
-                <RevealAnswer></RevealAnswer>
-            </div>
-            <div>
-                <StartAttempt></StartAttempt>
-            </div>
-            <div>
-                <TwoDice></TwoDice>
-            </div>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <StartAttempt></StartAttempt>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <hr></hr>
+            <CycleHoliday></CycleHoliday>
+            <hr />
+            <hr></hr>
+            <DoubleHalf></DoubleHalf>
+            <hr />
             ;;
         </div>
     );
