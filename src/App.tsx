@@ -17,7 +17,7 @@ function App(): React.JSX.Element {
             <header className="App-header">
                 Leah Marcelli UD CISC275 with React Hooks and TypeScript
             </header>
-            <h1> Pedro the Panda </h1>; This is{" "}
+            <div></div>Pedro the Panda ; This is{" "}
             <span style={{ color: "red" }}> my favorite animal</span>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
