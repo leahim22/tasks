@@ -11,6 +11,7 @@ import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
 import { Button } from "react-bootstrap";
 import { TwoDice } from "./components/TwoDice";
+
 function App(): React.JSX.Element {
     return (
         <div className="App">
