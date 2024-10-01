@@ -11,7 +11,11 @@ import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
 import { Button } from "react-bootstrap";
 import { TwoDice } from "./components/TwoDice";
-
+import { ChangeColor } from "./form-components/ChangeColor";
+import { CheckAnswer } from "./form-components/CheckAnswer";
+import { EditMode } from "./form-components/EditMode";
+import { GiveAttempts } from "./form-components/GiveAttempts";
+import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
 function App(): React.JSX.Element {
     return (
         <div className="App">
@@ -81,6 +85,13 @@ function App(): React.JSX.Element {
             <hr></hr>
             <DoubleHalf></DoubleHalf>
             <hr />
+            <hr></hr>
+            <ChangeColor></ChangeColor>
+            <hr></hr>
+            <EditMode></EditMode>
+            <hr></hr>
+            <GiveAttempts></GiveAttempts>
+            <hr></hr>
             ;;
         </div>
     );
