@@ -12,10 +12,8 @@ import { ChooseTeam } from "./bad-components/ChooseTeam";
 import { Button } from "react-bootstrap";
 import { TwoDice } from "./components/TwoDice";
 import { ChangeColor } from "./form-components/ChangeColor";
-import { CheckAnswer } from "./form-components/CheckAnswer";
 import { EditMode } from "./form-components/EditMode";
 import { GiveAttempts } from "./form-components/GiveAttempts";
-import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
 function App(): React.JSX.Element {
     return (
         <div className="App">
